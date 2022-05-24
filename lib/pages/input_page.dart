@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_bmi/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class inputPage extends StatelessWidget {
   const inputPage({Key? key}) : super(key: key);
@@ -19,10 +20,20 @@ class inputPage extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    childCard: IconContent(
+                      flutterIcon: FontAwesomeIcons.mars,
+                      flutterText: "MALE",
+                    ),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard()
+                  child: ReusableCard(
+                    childCard: IconContent(
+                      flutterIcon: FontAwesomeIcons.venus,
+                      flutterText: "FEMALE",
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -32,7 +43,9 @@ class inputPage extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    childCard: Container(),
+                  ),
                 ),
               ],
             ),
@@ -42,12 +55,31 @@ class inputPage extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    childCard: Center(),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    childCard: Container(),
+                  ),
                 ),
               ],
+            ),
+          ),
+          //Boton
+          Container(
+            height: 80.0,
+            width: double.infinity,
+            margin: const EdgeInsets.only(top: 12.0),
+            color: const Color(0xffffab4fee),
+            alignment: Alignment.center,
+            child: const Text(
+              "CALCULATE",
+              style: TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],
@@ -55,5 +87,3 @@ class inputPage extends StatelessWidget {
     );
   }
 }
-
-
