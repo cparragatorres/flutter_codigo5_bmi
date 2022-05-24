@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_bmi/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-const kTapSelectColor = Colors.red;
-const kCardColor = Color(0xff1f232c);
-enum Gender {male, female, matasquita, mandarina}
+const kTapSelectColor = Color(0xff273344);
+const kCardColor = Color(0xff1F222B);
 
+enum Gender { male, female, matasquita, mandarina }
 
 class inputPage extends StatefulWidget {
-
-
   @override
   State<inputPage> createState() => _inputPageState();
 }
 
 class _inputPageState extends State<inputPage> {
   Gender selectedOption = Gender.male;
+  int height = 165;
 
   @override
   Widget build(BuildContext context) {
@@ -33,31 +32,31 @@ class _inputPageState extends State<inputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    color: selectedOption == Gender.male ? kTapSelectColor : kCardColor,
+                    color: selectedOption == Gender.male
+                        ? kTapSelectColor
+                        : kCardColor,
                     childCard: IconContent(
                       flutterIcon: FontAwesomeIcons.mars,
                       flutterText: "MALE",
                     ),
-                    onTap: (){
+                    onTap: () {
                       selectedOption = Gender.male;
-                      setState((){
-
-                      });
+                      setState(() {});
                     },
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: selectedOption == Gender.female ? kTapSelectColor : kCardColor,
+                    color: selectedOption == Gender.female
+                        ? kTapSelectColor
+                        : kCardColor,
                     childCard: IconContent(
                       flutterIcon: FontAwesomeIcons.venus,
                       flutterText: "FEMALE",
                     ),
-                    onTap: (){
+                    onTap: () {
                       selectedOption = Gender.female;
-                      setState((){
-
-                      });
+                      setState(() {});
                     },
                   ),
                 ),
@@ -71,7 +70,40 @@ class _inputPageState extends State<inputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: kCardColor,
-                    childCard: Container(),
+                    childCard: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "HEIGHT",
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              height.toString(),
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 40.0
+                              ),
+                            ),
+                            Text(
+                              "cm",
+                            ),
+                          ],
+                        ),
+                        Slider(
+                          value: height.toDouble(),
+                          min: 0.0,
+                          max: 200.0,
+                          onChanged: (double valueSlider) {
+                            height = valueSlider.round();
+                            setState(() {});
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
