@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: "BMI CALCULATOR",
       theme: ThemeData.dark().copyWith(
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.greenAccent,
+          backgroundColor: Color(0xff13191b),
         )
       ),
       home: inputPage(),

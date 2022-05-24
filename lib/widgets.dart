@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ReusableCard extends StatelessWidget {
-
   Widget childCard;
+  Color color;
 
-  ReusableCard({required this.childCard});
+  ReusableCard({
+    required this.childCard,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
-        color: Color(0xff1f232c),
+        color: color,
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: childCard,
@@ -22,7 +25,6 @@ class ReusableCard extends StatelessWidget {
 }
 
 class IconContent extends StatelessWidget {
-
   IconData flutterIcon;
   String flutterText;
 
@@ -33,8 +35,10 @@ class IconContent extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        FaIcon(flutterIcon,
-          size: 60.0,),
+        FaIcon(
+          flutterIcon,
+          size: 60.0,
+        ),
         SizedBox(
           height: 10.0,
         ),

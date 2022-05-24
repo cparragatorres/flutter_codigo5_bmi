@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_bmi/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+const ktapSelectColor = Colors.red;
+const kCardColor = Color(0xff1f232c);
+
+
 class inputPage extends StatelessWidget {
   const inputPage({Key? key}) : super(key: key);
 
@@ -21,6 +25,7 @@ class inputPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: ReusableCard(
+                    color: kCardColor,
                     childCard: IconContent(
                       flutterIcon: FontAwesomeIcons.mars,
                       flutterText: "MALE",
@@ -29,6 +34,7 @@ class inputPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: ReusableCard(
+                    color: kCardColor,
                     childCard: IconContent(
                       flutterIcon: FontAwesomeIcons.venus,
                       flutterText: "FEMALE",
@@ -44,6 +50,7 @@ class inputPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: ReusableCard(
+                    color: kCardColor,
                     childCard: Container(),
                   ),
                 ),
@@ -56,11 +63,13 @@ class inputPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: ReusableCard(
+                    color: kCardColor,
                     childCard: Center(),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
+                    color: kCardColor,
                     childCard: Container(),
                   ),
                 ),
