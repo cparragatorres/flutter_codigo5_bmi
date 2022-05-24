@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_bmi/pages/input_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ReusableCard extends StatelessWidget {
@@ -53,6 +54,26 @@ class IconContent extends StatelessWidget {
         ),
         Text(flutterText),
       ],
+    );
+  }
+}
+
+class IconButtonContent extends StatelessWidget {
+  const IconButtonContent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      shape: CircleBorder(),
+      fillColor: kPrimaryColor,
+      constraints: BoxConstraints.tightFor(
+        width: 35.0,
+        height: 35.0,
+      ),
+      child: FaIcon(FontAwesomeIcons.plus),
+      onPressed: () {
+
+      },
     );
   }
 }

@@ -150,35 +150,11 @@ class _inputPageState extends State<inputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            RawMaterialButton(
-                              shape: CircleBorder(),
-                              fillColor: kPrimaryColor,
-                              constraints: BoxConstraints.tightFor(
-                                width: 35.0,
-                                height: 35.0,
-                              ),
-                              child: FaIcon(FontAwesomeIcons.plus),
-                              onPressed: () {
-                                weight++;
-                                setState((){});
-                              },
-                            ),
+                            IconButtonContent(),
                             const SizedBox(
                               width: 10.0,
                             ),
-                            RawMaterialButton(
-                              shape: CircleBorder(),
-                              fillColor: kPrimaryColor,
-                              constraints: BoxConstraints.tightFor(
-                                width: 35.0,
-                                height: 35.0,
-                              ),
-                              child: FaIcon(FontAwesomeIcons.minus),
-                              onPressed: () {
-                                weight--;
-                                setState((){});
-                              },
-                            ),
+                            IconButtonContent(),
                           ],
                         ),
                       ],
@@ -217,35 +193,11 @@ class _inputPageState extends State<inputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            RawMaterialButton(
-                              shape: CircleBorder(),
-                              fillColor: kPrimaryColor,
-                              constraints: BoxConstraints.tightFor(
-                                width: 35.0,
-                                height: 35.0,
-                              ),
-                              child: FaIcon(FontAwesomeIcons.plus),
-                              onPressed: () {
-                                age++;
-                                setState((){});
-                              },
-                            ),
+                            IconButtonContent(),
                             const SizedBox(
                               width: 10.0,
                             ),
-                            RawMaterialButton(
-                              shape: CircleBorder(),
-                              fillColor: kPrimaryColor,
-                              constraints: BoxConstraints.tightFor(
-                                width: 35.0,
-                                height: 35.0,
-                              ),
-                              child: FaIcon(FontAwesomeIcons.minus),
-                              onPressed: () {
-                                age--;
-                                setState((){});
-                              },
-                            ),
+                            IconButtonContent(),
                           ],
                         ),
                       ],
