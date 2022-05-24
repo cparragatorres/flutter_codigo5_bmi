@@ -85,37 +85,21 @@ class _inputPageState extends State<inputPage> {
                             Text(
                               height.toString(),
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 40.0
-                              ),
+                                  fontWeight: FontWeight.bold, fontSize: 40.0),
                             ),
                             Text(
                               "cm",
                             ),
                           ],
                         ),
-                        SliderTheme(
-                          data: SliderThemeData(
-                            activeTrackColor: kPrimaryColor,
-                            thumbColor: kPrimaryColor,
-
-                            thumbShape: RoundSliderThumbShape(
-                              enabledThumbRadius: 14.0,
-                            ),
-                            // overlayShape: RoundSliderThumbShape(
-                            //   enabledThumbRadius: 19.0,
-                            // ),
-                            overlayColor: kPrimaryColor.withOpacity(0.25),
-                          ),
-                          child: Slider(
-                            value: height.toDouble(),
-                            min: 0.0,
-                            max: 200.0,
-                            onChanged: (double valueSlider) {
-                              height = valueSlider.round();
-                              setState(() {});
-                            },
-                          ),
+                        Slider(
+                          value: height.toDouble(),
+                          min: 0.0,
+                          max: 200.0,
+                          onChanged: (double valueSlider) {
+                            height = valueSlider.round();
+                            setState(() {});
+                          },
                         ),
                       ],
                     ),

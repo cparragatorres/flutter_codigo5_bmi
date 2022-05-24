@@ -16,7 +16,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         appBarTheme: AppBarTheme(
           backgroundColor: Color(0xff13171B),
-        )
+        ),
+        scaffoldBackgroundColor: Color(0xff131918),
+        sliderTheme: SliderThemeData(
+          activeTrackColor: kPrimaryColor,
+          thumbColor: kPrimaryColor,
+          thumbShape: RoundSliderThumbShape(
+            enabledThumbRadius: 14.0,
+          ),
+          // overlayShape: RoundSliderThumbShape(
+          //   enabledThumbRadius: 19.0,
+          // ),
+          overlayColor: kPrimaryColor.withOpacity(0.25),
+        ),
       ),
       home: inputPage(),
     );
