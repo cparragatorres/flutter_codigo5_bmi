@@ -124,7 +124,7 @@ class _inputPageState extends State<inputPage> {
                     childCard: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           "WEIGHT",
                           style: TextStyle(
                             fontSize: 20.0,
@@ -142,7 +142,7 @@ class _inputPageState extends State<inputPage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(
+                            const Text(
                               "Kg",
                             ),
                           ],
@@ -150,11 +150,23 @@ class _inputPageState extends State<inputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            IconButtonContent(),
+                            IconButtonContent(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: (){
+                                weight--;
+                                setState((){});
+                              },
+                            ),
                             const SizedBox(
                               width: 10.0,
                             ),
-                            IconButtonContent(),
+                            IconButtonContent(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                weight++;
+                                setState((){});
+                              },
+                            ),
                           ],
                         ),
                       ],
@@ -167,7 +179,7 @@ class _inputPageState extends State<inputPage> {
                     childCard: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           "AGE",
                           style: TextStyle(
                             fontSize: 20.0,
@@ -185,7 +197,7 @@ class _inputPageState extends State<inputPage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(
+                            const Text(
                               "",
                             ),
                           ],
@@ -193,11 +205,23 @@ class _inputPageState extends State<inputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            IconButtonContent(),
+                            IconButtonContent(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                age--;
+                                setState((){});
+                              },
+                            ),
                             const SizedBox(
                               width: 10.0,
                             ),
-                            IconButtonContent(),
+                            IconButtonContent(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                age++;
+                                setState((){});
+                              },
+                            ),
                           ],
                         ),
                       ],

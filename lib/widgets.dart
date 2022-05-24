@@ -59,7 +59,13 @@ class IconContent extends StatelessWidget {
 }
 
 class IconButtonContent extends StatelessWidget {
-  const IconButtonContent({Key? key}) : super(key: key);
+  IconData icon;
+  Function onPressed;
+
+  IconButtonContent({
+    required this.icon,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -70,10 +76,10 @@ class IconButtonContent extends StatelessWidget {
         width: 35.0,
         height: 35.0,
       ),
-      child: FaIcon(FontAwesomeIcons.plus),
-      onPressed: () {
-
-      },
+      child: FaIcon(icon,),
+      onPressed: (){
+        onPressed();
+      }
     );
   }
 }

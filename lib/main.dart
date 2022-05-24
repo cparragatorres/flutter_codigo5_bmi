@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_bmi/pages/input_page.dart';
+import 'package:flutter_codigo5_bmi/pages/results_page.dart';
 
 void main(){
   runApp(MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           overlayColor: kPrimaryColor.withOpacity(0.25),
         ),
       ),
-      home: inputPage(),
+      home: ResultPage(),
     );
   }
 }
