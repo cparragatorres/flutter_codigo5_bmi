@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_bmi/widgets.dart';
 
 class inputPage extends StatelessWidget {
   const inputPage({Key? key}) : super(key: key);
@@ -7,47 +8,52 @@ class inputPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        //backgroundColor: Colors.deepPurple,
         title: Text("BMI Calculator"),
         centerTitle: true,
       ),
       body: Column(
         children: [
+          //primera fila
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
+                  child: ReusableCard(),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
+                  child: ReusableCard()
                 ),
               ],
             ),
-          )
+          ),
+          //segunda fila
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: ReusableCard(),
+                ),
+              ],
+            ),
+          ),
+          //tercera fila
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: ReusableCard(),
+                ),
+                Expanded(
+                  child: ReusableCard(),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
+
