@@ -4,10 +4,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const kTapSelectColor = Colors.red;
 const kCardColor = Color(0xff1f232c);
+enum Gender {male, female, matasquita, mandarina}
 
 
-class inputPage extends StatelessWidget {
-  const inputPage({Key? key}) : super(key: key);
+class inputPage extends StatefulWidget {
+
+
+  @override
+  State<inputPage> createState() => _inputPageState();
+}
+
+class _inputPageState extends State<inputPage> {
+  Gender selectedOption = Gender.male;
 
   @override
   Widget build(BuildContext context) {
@@ -25,25 +33,31 @@ class inputPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    color: kCardColor,
+                    color: selectedOption == Gender.male ? kTapSelectColor : kCardColor,
                     childCard: IconContent(
                       flutterIcon: FontAwesomeIcons.mars,
                       flutterText: "MALE",
                     ),
                     onTap: (){
-                      print("Hola mundo");
+                      selectedOption = Gender.male;
+                      setState((){
+
+                      });
                     },
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: kCardColor,
+                    color: selectedOption == Gender.female ? kTapSelectColor : kCardColor,
                     childCard: IconContent(
                       flutterIcon: FontAwesomeIcons.venus,
                       flutterText: "FEMALE",
                     ),
                     onTap: (){
-                      print("Juanito");
+                      selectedOption = Gender.female;
+                      setState((){
+
+                      });
                     },
                   ),
                 ),
