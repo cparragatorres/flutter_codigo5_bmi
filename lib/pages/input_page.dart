@@ -153,9 +153,9 @@ class _InputPageState extends State<InputPage> {
                           children: [
                             IconButtonContent(
                               icon: FontAwesomeIcons.minus,
-                              onPressed: (){
+                              onPressed: () {
                                 weight--;
-                                setState((){});
+                                setState(() {});
                               },
                             ),
                             const SizedBox(
@@ -165,7 +165,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 weight++;
-                                setState((){});
+                                setState(() {});
                               },
                             ),
                           ],
@@ -210,7 +210,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 age--;
-                                setState((){});
+                                setState(() {});
                               },
                             ),
                             const SizedBox(
@@ -220,7 +220,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 age++;
-                                setState((){});
+                                setState(() {});
                               },
                             ),
                           ],
@@ -235,8 +235,16 @@ class _InputPageState extends State<InputPage> {
           //Boton
           NavigatorButton(
             text: "CALCULATE",
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(
+                    height: height,
+                    weight: weight,
+                  ),
+                ),
+              );
             },
           ),
         ],
