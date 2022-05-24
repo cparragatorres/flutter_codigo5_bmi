@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_bmi/pages/results_page.dart';
 import 'package:flutter_codigo5_bmi/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -8,12 +9,12 @@ const kPrimaryColor = Color(0xffab4fee);
 
 enum Gender { male, female, matasquita, mandarina }
 
-class inputPage extends StatefulWidget {
+class InputPage extends StatefulWidget {
   @override
-  State<inputPage> createState() => _inputPageState();
+  State<InputPage> createState() => _InputPageState();
 }
 
-class _inputPageState extends State<inputPage> {
+class _InputPageState extends State<InputPage> {
   Gender selectedOption = Gender.male;
   int height = 165;
   int weight = 75;
@@ -232,19 +233,11 @@ class _inputPageState extends State<inputPage> {
             ),
           ),
           //Boton
-          Container(
-            height: 80.0,
-            width: double.infinity,
-            margin: const EdgeInsets.only(top: 12.0),
-            color: kPrimaryColor,
-            alignment: Alignment.center,
-            child: const Text(
-              "CALCULATE",
-              style: TextStyle(
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+          NavigatorButton(
+            text: "CALCULATE",
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));
+            },
           ),
         ],
       ),

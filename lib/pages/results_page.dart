@@ -12,34 +12,58 @@ class ResultPage extends StatelessWidget {
         title: const Text("BMI Calculator"),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Results",
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Expanded(
-            child: ReusableCard(
-              childCard: Container(),
-              color: kTapSelectColor,
-            ),
-          ),
-          Container(
-            height: 80.0,
-            width: double.infinity,
-            margin: const EdgeInsets.only(top: 12.0),
-            color: kPrimaryColor,
-            alignment: Alignment.center,
-            child: const Text(
-              "RE - CALCULATE",
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Results",
               style: TextStyle(
-                fontSize: 30.0,
+                fontSize: 40.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
+          Expanded(
+            child: ReusableCard(
+              childCard: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    "Normal",
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 26.0,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.greenAccent
+                    ),
+                  ),
+                  Text(
+                    "24",
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 70.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Debes de comer",
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ],
+              ),
+              color: kTapSelectColor,
+            ),
+          ),
+          NavigatorButton(text: "RE - CALCULATE",
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => InputPage()));
+          },),
         ],
       ),
     );
