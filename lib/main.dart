@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_bmi/pages/input_page.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 

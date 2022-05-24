@@ -70,32 +70,31 @@ class IconButtonContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      shape: CircleBorder(),
-      fillColor: kPrimaryColor,
-      constraints: BoxConstraints.tightFor(
-        width: 35.0,
-        height: 35.0,
-      ),
-      child: FaIcon(icon,),
-      onPressed: (){
-        onPressed();
-      }
-    );
+        shape: CircleBorder(),
+        fillColor: kPrimaryColor,
+        constraints: BoxConstraints.tightFor(
+          width: 35.0,
+          height: 35.0,
+        ),
+        child: FaIcon(
+          icon,
+        ),
+        onPressed: () {
+          onPressed();
+        });
   }
 }
 
 class NavigatorButton extends StatelessWidget {
-
   String text;
   Function onTap;
-
 
   NavigatorButton({required this.text, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         onTap();
       },
       child: Container(

@@ -10,13 +10,12 @@ class ResultPage extends StatelessWidget {
   ResultPage({
     required this.height,
     required this.weight,
-});
+  });
 
   BMIBrain? bmiBrain;
 
   @override
   Widget build(BuildContext context) {
-
     bmiBrain = BMIBrain(weight: weight, height: height);
     print(bmiBrain!.calculateBMI());
 
@@ -47,10 +46,9 @@ class ResultPage extends StatelessWidget {
                     bmiBrain!.getResults(),
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      fontSize: 26.0,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.greenAccent
-                    ),
+                        fontSize: 26.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.greenAccent),
                   ),
                   Text(
                     bmiBrain!.calculateBMI().toStringAsFixed(2),
@@ -73,10 +71,13 @@ class ResultPage extends StatelessWidget {
               color: kTapSelectColor,
             ),
           ),
-          NavigatorButton(text: "RE - CALCULATE",
-          onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => InputPage()));
-          },),
+          NavigatorButton(
+            text: "RE - CALCULATE",
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => InputPage()));
+            },
+          ),
         ],
       ),
     );
