@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_bmi/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-const ktapSelectColor = Colors.red;
+const kTapSelectColor = Colors.red;
 const kCardColor = Color(0xff1f232c);
 
 
@@ -30,6 +30,9 @@ class inputPage extends StatelessWidget {
                       flutterIcon: FontAwesomeIcons.mars,
                       flutterText: "MALE",
                     ),
+                    onTap: (){
+                      print("Hola mundo");
+                    },
                   ),
                 ),
                 Expanded(
@@ -39,6 +42,9 @@ class inputPage extends StatelessWidget {
                       flutterIcon: FontAwesomeIcons.venus,
                       flutterText: "FEMALE",
                     ),
+                    onTap: (){
+                      print("Juanito");
+                    },
                   ),
                 ),
               ],
