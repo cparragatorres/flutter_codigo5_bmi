@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xff131918),
         sliderTheme: SliderThemeData(
           activeTrackColor: kPrimaryColor,
+          inactiveTrackColor: kTapSelectColor,
           thumbColor: kPrimaryColor,
           thumbShape: RoundSliderThumbShape(
             enabledThumbRadius: 14.0,

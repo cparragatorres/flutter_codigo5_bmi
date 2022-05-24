@@ -16,6 +16,8 @@ class inputPage extends StatefulWidget {
 class _inputPageState extends State<inputPage> {
   Gender selectedOption = Gender.male;
   int height = 165;
+  int weight = 75;
+  int age = 23;
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +78,10 @@ class _inputPageState extends State<inputPage> {
                       children: [
                         Text(
                           "HEIGHT",
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                        SizedBox(
+                          height: 10.0,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -115,13 +121,135 @@ class _inputPageState extends State<inputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: kCardColor,
-                    childCard: Center(),
+                    childCard: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "WEIGHT",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              weight.toString(),
+                              style: TextStyle(
+                                fontSize: 40.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "Kg",
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RawMaterialButton(
+                              shape: CircleBorder(),
+                              fillColor: kPrimaryColor,
+                              constraints: BoxConstraints.tightFor(
+                                width: 35.0,
+                                height: 35.0,
+                              ),
+                              child: FaIcon(FontAwesomeIcons.plus),
+                              onPressed: () {
+                                weight++;
+                                setState((){});
+                              },
+                            ),
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            RawMaterialButton(
+                              shape: CircleBorder(),
+                              fillColor: kPrimaryColor,
+                              constraints: BoxConstraints.tightFor(
+                                width: 35.0,
+                                height: 35.0,
+                              ),
+                              child: FaIcon(FontAwesomeIcons.minus),
+                              onPressed: () {
+                                weight--;
+                                setState((){});
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     color: kCardColor,
-                    childCard: Container(),
+                    childCard: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "AGE",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              age.toString(),
+                              style: TextStyle(
+                                fontSize: 40.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "",
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RawMaterialButton(
+                              shape: CircleBorder(),
+                              fillColor: kPrimaryColor,
+                              constraints: BoxConstraints.tightFor(
+                                width: 35.0,
+                                height: 35.0,
+                              ),
+                              child: FaIcon(FontAwesomeIcons.plus),
+                              onPressed: () {
+                                age++;
+                                setState((){});
+                              },
+                            ),
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            RawMaterialButton(
+                              shape: CircleBorder(),
+                              fillColor: kPrimaryColor,
+                              constraints: BoxConstraints.tightFor(
+                                width: 35.0,
+                                height: 35.0,
+                              ),
+                              child: FaIcon(FontAwesomeIcons.minus),
+                              onPressed: () {
+                                age--;
+                                setState((){});
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
