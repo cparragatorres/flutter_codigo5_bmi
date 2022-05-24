@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const kTapSelectColor = Color(0xff273344);
 const kCardColor = Color(0xff1F222B);
+const kPrimaryColor = Color(0xffab4fee);
 
 enum Gender { male, female, matasquita, mandarina }
 
@@ -93,14 +94,28 @@ class _inputPageState extends State<inputPage> {
                             ),
                           ],
                         ),
-                        Slider(
-                          value: height.toDouble(),
-                          min: 0.0,
-                          max: 200.0,
-                          onChanged: (double valueSlider) {
-                            height = valueSlider.round();
-                            setState(() {});
-                          },
+                        SliderTheme(
+                          data: SliderThemeData(
+                            activeTrackColor: kPrimaryColor,
+                            thumbColor: kPrimaryColor,
+
+                            thumbShape: RoundSliderThumbShape(
+                              enabledThumbRadius: 14.0,
+                            ),
+                            // overlayShape: RoundSliderThumbShape(
+                            //   enabledThumbRadius: 19.0,
+                            // ),
+                            overlayColor: kPrimaryColor.withOpacity(0.25),
+                          ),
+                          child: Slider(
+                            value: height.toDouble(),
+                            min: 0.0,
+                            max: 200.0,
+                            onChanged: (double valueSlider) {
+                              height = valueSlider.round();
+                              setState(() {});
+                            },
+                          ),
                         ),
                       ],
                     ),
@@ -133,7 +148,7 @@ class _inputPageState extends State<inputPage> {
             height: 80.0,
             width: double.infinity,
             margin: const EdgeInsets.only(top: 12.0),
-            color: const Color(0xffffab4fee),
+            color: kPrimaryColor,
             alignment: Alignment.center,
             child: const Text(
               "CALCULATE",
